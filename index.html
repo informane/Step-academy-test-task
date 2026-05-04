@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step IT Academy</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <a href="#"><img src='images/logo.svg' /></a>
+            </div>
+            <nav class="desktop-nav nav" aria-label="Main navigation">
+                <ul>
+                    <li class="has-submenu active">
+                        <a href="#">Програми</a>
+                        <ul>
+                            <li><a href="#">Програма 1</a></li>
+                            <li><a href="#">Програма 2</a></li>
+                            <li><a href="#">Програма 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Галерея</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Наша місія</a>
+                        <ul>
+                            <li><a href="#">Місія 1</a></li>
+                            <li><a href="#">Місія 2</a></li>
+                            <li><a href="#">Місія 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Медіа</a></li>
+                    <li><a href="#">Зв'язатися з нами</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <nav class="locale-nav nav" aria-label="Locale navigation">
+                <ul>
+                    <li class="has-submenu">
+                        <a href="#">Дніпро</a>
+                        <ul>
+                            <li><a href="#">Львів</a></li>
+                            <li><a href="#">Харків</a></li>
+                            <li><a href="#">Київ</a></li>
+                            <li><a href="#">Одеса</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">UA</a>
+                        <ul>
+                            <li><a href="#">EN</a></li>
+                            <li><a href="#">RU</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu active">
+                        <a href="#">+38 (056) 767 37 67</a>
+                        <ul>
+                            <li><a href="#">+38 (056) 767 37 69</a></li>
+                            <li><a href="#">+38 (056) 767 37 68</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="mobile-nav" aria-label="Main mobile navigation">
+                <button class="mobile-nav-button">☰</button>
+                <ul class="mobile-nav-items">
+                    <li class="has-submenu">
+                        <a href="#">Програми</a>
+                        <hr>
+                        <ul>
+                            <li><a href="#">Програма 1</a></li>
+                            <hr>
+                            <li><a href="#">Програма 2</a></li>
+                            <hr>
+                            <li><a href="#">Програма 3</a></li>
+                            <hr>
+                        </ul>
+                    </li>
+                    <li><a href="#">Галерея</a></li>
+                    <hr>
+                    <li class="has-submenu">
+                        <a href="#">Наша місія</a>
+                        <hr>
+                        <ul>
+                            <li><a href="#">Місія 1</a></li>
+                            <hr>
+                            <li><a href="#">Місія 2</a></li>
+                            <hr>
+                            <li><a href="#">Місія 3</a></li>
+                            <hr>
+                        </ul>
+                    </li>
+                    <li><a href="#">Медіа</a></li>
+                    <hr>
+                    <li><a href="#">Зв'язатися з нами</a></li>
+                    <hr>
+                </ul>
+                <script>
+                    $('.nav ul li.has-submenu').mouseenter(function () {
+                        $(this).find('ul').slideDown();
+                    })
+
+                    $('.nav ul li.has-submenu').mouseleave(function () {
+                        $(this).find('ul').hide();
+                    })
+
+                    $('.mobile-nav-button').click(function (e) {
+                        e.stopPropagation();
+                        if (!$(this).hasClass('active')) {
+                            $('.mobile-nav-items').slideDown();
+                            $(this).addClass('active');
+                        } else {
+                            $('.mobile-nav-items').slideUp();
+                            $(this).removeClass('active');
+                        }
+                    })
+
+                    $('.mobile-nav-items li.has-submenu').click(function (e) {
+                        e.stopPropagation();
+                        if (!$(this).hasClass('active')) {
+                            $(this).find('ul').slideDown();
+                            $(this).addClass('active');
+                        } else {
+                            $(this).find('ul').slideUp();
+                            $(this).removeClass('active');
+                        }
+                    })
+                </script>
+            </nav>
+        </div>
+
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="left-side">
+                    <ul class="tags-list">
+                        <li class="tag">
+                            14 днів
+                        </li>
+                        <li class="tag">
+                            Марс
+                        </li>
+                    </ul>
+                    <h2>
+                        Space Explorers: Марсіанські хроніки
+                    </h2>
+                    <p>
+                        Від теорії до практики: станьте частиною команди, яка колонізує Марс!
+                    </p>
+                    <button class="hero-button">
+                        Забронювати місце в шатлі
+                    </button>
+                </div>
+                <div class="right-side">
+                    <div class="purple-rect purple-rect-1"></div>
+                    <div class="purple-rect purple-rect-2"></div>
+                    <div class="purple-rect purple-rect-3"></div>
+                    <ul class="tags-list">
+                        <li class="tag">🚀 Ракетобудування</li>
+                        <li class="tag">🛰️ Супутникові технології</li>
+                        <li class="tag">🧪 Марсіанська біологія</li>
+                        <li class="tag">🌌 Астрономія</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="promos">
+            <div class="promo promo-1">
+                <h4>15% знижка</h4>
+                <p>при бронюванні до 7 червня або на два тижні одночасно.</p>
+            </div>
+            <div class="promo promo-2">
+                <h4><img src="images/icons/arrow-diag.svg" /></h4>
+                <p>Безпечний модуль
+                    у кратері на Марсі</p>
+            </div>
+            <div class="promo promo-3">
+                <h4><img src="images/icons/arrow-diag.svg" /></h4>
+                <p>Тематичні зміни адаптовані до інтересів кожної дитини.</p>
+            </div>
+            <div class="promo promo-4">
+                <h4><img src="images/icons/arrow-diag.svg" /></h4>
+                <p>Зручні каюти та збалансоване харчування.</p>
+            </div>
+        </section>
+        <section class="main-promo">
+            <div class="left-side">
+                <h3>Табір, що відкриває
+                    космічні горизонти для кожної дитини
+                </h3>
+                <p>
+                    За 14 днів у Space Explorers ваша дитина отримає унікальний досвід: від конструювання ракет до
+                    вивчення марсіанського ґрунту. Ми поєднали науку, технології, інженерію та мистецтво, щоб навчання
+                    було захопливою космічною одісеєю.
+                </p>
+            </div>
+            <div class="right-side">
+                <div class="background">
+                    <img src="images/main-promo.png" />
+                </div>
+            </div>
+        </section>
+        <section class="study-program">
+            <h2>
+                Навчальна програма
+            </h2>
+            <div class="study-program-body">
+                <div class="module">
+                    <div class="module-desc module-1-desc">
+                        <div class="module-desc-top">
+                            <h4>Модуль 1</h4>
+                            <div class="lections-num-small">
+                                4 лекції
+                            </div>
+                        </div>
+                        <ul class="module-list">
+                            <li>Основи ракетобудування: від креслень до перших запусків.</li>
+                            <li>Матеріалознавство: вибір матеріалів для екстремальних умов.</li>
+                            <li>Оптика та телескопія: спостереження за далекими світами.</li>
+                            <li>Космічна акустика: передавання звуку у вакуумі.</li>
+                        </ul>
+                    </div>
+                    <div class="module-info module-1-info">
+                        <div class="lections-num">
+                            <div class="caption">
+                                <h6>12</h6>
+                                Лекцій
+                            </div>
+                        </div>
+                        <div class="days-num">
+                            <div class="caption">
+                                <h6>10</h6>
+                                Днів
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="module">
+                    <div class="module-desc module-2-desc">
+                        <div class="module-desc-top">
+                            <h4>Модуль 2</h4>
+                            <div class="lections-num-small">
+                                4 лекції
+                            </div>
+                        </div>
+                        <ul class="module-list">
+                            <li>Виживання у космосі: психологічна та фізична підготовка.</li>
+                            <li>Створення карт зоряного неба: навігація у відкритому космосі.</li>
+                            <li>Робототехніка: конструювання марсоходів.</li>
+                            <li>Експерименти з вирощування рослин у марсіанському ґрунті.</li>
+                        </ul>
+                    </div>
+                    <div class="module-info module-2-info"></div>
+                </div>
+                <div class="module">
+                    <div class="module-desc module-3-desc">
+                        <div class="module-desc-top">
+                            <h4>Модуль 3</h4>
+                            <div class="lections-num-small">
+                                4 лекції
+                            </div>
+                        </div>
+                        <ul class="module-list">
+                            <li>Створення 3D-моделей марсіанських баз.</li>
+                            <li>Віртуальна реальність: прогулянка поверхнею Марса.</li>
+                            <li>Створення відеоігор: програмування місій на Марс.</li>
+                            <li>Космічна журналістика: ведення блогу з орбіти Марса.</li>
+                        </ul>
+                    </div>
+                    <div class="module-info module-3-info"></div>
+                </div>
+            </div>
+        </section>
+        <section class="prices">
+            <h2>Варіанти та ціни</h2>
+            <div class="prices-inner">
+                <div class="prices-desc">
+                    <div class="left-side">
+                        <h4>Space Explorers: Mars Academy</h4>
+                        <div class="details-grid">
+                            <div class="age-label">Для дітей:</div>
+                            <div class="age">7-14 років</div>
+                            <div class="period-label">Період:</div>
+                            <div class="period">10 днів</div>
+                            <div class="dates-label">Дати польотів:</div>
+                            <div class="dates">10.06 - 20.06.2026 | 10.07 - 20.07.2026</div>
+                        </div>
+                        <div class="details-line"></div>
+                        <div class="details-prices">
+                            <div class="prices-label">Вартість курсу:</div>
+                            <div class="prices-price">
+                                <div class="old-price">6 600 грн</div>
+                                <div class="new-price">6 600 <span class='hrn'>грн</span></div>
+                            </div>
+                        </div>
+                        <button class="prices-button">Забронювати місце</button>
+                    </div>
+                    <div class="right-side">
+                        <h4>Консультація експерта</h4>
+                        <p>Залиште заявку, і ми відповімо на всі питання</p>
+                        <form class="feedback">
+                            <input type="text" id="name" name="name" placeholder="Ваше ім'я" />
+                            <input type="tel" id="tel" name="tel" placeholder="+38 ( __ ) ___ - __ - __" />
+                            <input type="email" id="email" name="email" placeholder="Електронна пошта" />
+                            <button type="submit">Відправити</button>
+                            <div class="terms">Натискаючи кнопку, ви приймаєте умови конфіденційності</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="camp-location">
+            <h2>Де проходить табір</h2>
+            <div class="camp-location-body">
+                <div class="location location-1">
+                </div>
+                <div class="location location-2">
+                </div>
+                <div class="location location-3">
+                </div>
+            </div>
+        </section>
+        <section class="faq">
+            <h2>Поширені запитання</h2>
+            <div id="faq-list">
+                <div class="question">Як зв'язатися з дитиною терміново?</div>
+                <div>
+                    <p class="answer">Відповідь 1</p>
+                </div>
+                <div class="question">Чи працює табір без електроенергії?</div>
+                <div>
+                    <p class="answer">Відповідь 2</p>
+                </div>
+                <div class="question">Як організовано харчування та чи враховуються дієтичні потреби?</div>
+                <div>
+                    <p class="answer">Відповідь 3</p>
+                </div>
+                <div class="question">Чи є кондиціонери в спекотні дні?</div>
+                <div>
+                    <p class="answer">Відповідь 4</p>
+                </div>
+                <div class="question">Хто відповідає за безпеку дітей?</div>
+                <div>
+                    <p class="answer">Відповідь 5</p>
+                </div>
+            </div>
+            <script>
+                $("#faq-list").accordion({
+                    collapsible: true,
+                    active: false
+                });
+            </script>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-info">
+            <div class="left-side">
+                <img src="images/logo.svg" />
+                <p>Освітній холдинг ITSTEP - освіта, яка надає нові можливості</p>
+                <ul class="social">
+                    <li><a href="#"><img src="images/icons/instagram.svg" /></a></li>
+                    <li><a href="#"><img src="images/icons/facebook.svg" /></a></li>
+                    <li><a href="#"><img src="images/icons/linkedin.svg" /></a></li>
+                    <li><a href="#"><img src="images/icons/youtube.svg" /></a></li>
+                </ul>
+            </div>
+            <div class="column column-1">
+                <h5>Всі напрямки</h5>
+                <div class="footer-line"></div>
+                <ul class="departments">
+                    <li><a href="#">Професійна освіта</a></li>
+                    <li><a href="#">Курси для дорослих</a></li>
+                    <li><a href="#">Курси для дітей</a></li>
+                    <li><a href="#">Клуби</a></li>
+                    <li><a href="#">Табори</a></li>
+                    <li><a href="#">Університет</a></li>
+                    <li><a href="#">Коледж</a></li>
+                    <li><a href="#">Школа</a></li>
+                </ul>
+            </div>
+            <div class="column column-2">
+                <h5>Про Академію</h5>
+                <div class="footer-line"></div>
+                <ul class="about">
+                    <li><a href="#">Про Академію</a></li>
+                    <li><a href="#">Історія успіху</a></li>
+                    <li><a href="#">Вакансії</a></li>
+                    <li><a href="#">Відгуки</a></li>
+                    <li><a href="#">Презентація таборів від Step Travel</a></li>
+                </ul>
+            </div>
+            <div class="column column-3">
+                <h5>Контакты</h5>
+                <div class="footer-line"></div>
+                <div class="contacts">
+                    <div class="address">
+                        <a href="javascript: void(0)"> вул. Жилянська, 128/28</a>
+                        <div class="address-hidden">
+                            <a href="#"> вул. Жилянська, 125</a>
+                            <a href="#"> вул. Жилянська, 127</a>
+                        </div>
+                    </div>
+                    <ul class="telephones">
+                        <li><a href="tel:+38 (044) 537-22-60">+38 (044) 537-22-60</a></li>
+                        <li><a href="tel:+38 (044) 537-22-60">+38 (044) 537-22-60</a></li>
+                        <li><a href="tel:+38 (073) 797-88-20">+38 (073) 797-88-20</a></li>
+                        <li><a href="tel:+38 (073) 797-88-20">+38 (073) 797-88-20</a></li>
+                    </ul>
+                    <div class="call-us">
+                        <button>Замовити дзвінок</button>
+                        <div class="messengers-block">
+                            <div class="label">Або напишіть у месенджер</div>
+                            <div class="messengers">
+                                <div class="telegram"><a href="#"><img src="images/icons/telegram.svg" /></a></div>
+                                <div class="viber"><a href="#"><img src="images/icons/viber.svg" /></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-line"></div>
+        <div class="copyright">© 1999-2025 Компьютерная Академия ШАГ</div>
+    </footer>
+</body>
+
+</html>
