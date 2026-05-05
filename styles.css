@@ -419,7 +419,8 @@ main {
     /*height: 716px;*/
     margin: auto;
     z-index: 0;
-    overflow: auto;
+    /*overflow: auto;*/
+    /*background: url(images/hero-bg.png);*/
 }
 
 .hero .hero-inner {
@@ -438,7 +439,9 @@ main {
     border-radius: 72px;
     position: absolute;
     z-index: -1;
-    background: url(images/hero-bg.png);
+    /*backdrop-filter: blur(3px);*/
+    background-image: url(images/hero-bg.png);
+    mask-image: linear-gradient(to right, #7C60E980 0%, #7C60E9F0 100%);
 }
 
 .hero .left-side {
