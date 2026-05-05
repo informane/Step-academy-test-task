@@ -441,7 +441,7 @@ main {
     z-index: -2;
     background-image: url(images/hero-bg-no-grad.png);
     /*mask-image: url(images/hero-bg.png);*/
-    mask-image: linear-gradient(to right, #7C60E980 0%, #7C60E9F0 100%);
+    /*mask-image: linear-gradient(to right, #7C60E980 0%, #7C60E9F0 100%);*/
 }
 
 /*
